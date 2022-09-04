@@ -37,7 +37,7 @@ public class IssueTests extends BaseTest {
 
         SoftAssertions softAssert = new SoftAssertions();
 
-        softAssert.assertThat(actualIssueSummary).isEqualTo("Summary1");
+        softAssert.assertThat(actualIssueSummary).isEqualTo("Summary");
 
         mantisSite.deleteReportIssue();
         String actualIssueID = mantisSite.getViewIssuePage().getIssueID();
