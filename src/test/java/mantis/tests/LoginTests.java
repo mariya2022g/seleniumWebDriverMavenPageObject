@@ -34,4 +34,14 @@ public class LoginTests extends BaseTest{
         Assertions.assertEquals("admin", currentUserName);
         Thread.sleep(1000);
     }
+
+    @Test
+    public void clickAllIssues() throws InterruptedException {
+        mantisSite = new MantisSite(driver);
+        mantisSite.login("admin", "admin20");
+
+        Assertions.assertTrue(mantisSite.getMainPage().isAssignedToMeBlockDisplay());
+        Assertions.assertTrue(mantisSite.getMainPage().isUnassignedBlockDisplayed());
+        Assertions.assertEquals(mantisSite.getMainPage().getTitleAssignedToMeBlock(), "Assigned to Me (Unresolved)");
+    }
 }
